@@ -1,0 +1,31 @@
+<!--
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+-->
+<if args="isFeatureAvailable() && isActive">
+    <div class="admin__data-grid-ai-search-wrap _show">
+        <!-- Edit of Search query -->
+        <div class="admin__tofl_ai-query-edit-container">
+            <input class="admin__control-text data-grid-search-by-ai-control" type="text"
+                   autocomplete="off"
+                   data-bind="
+                        i18n: placeholder,
+                        attr: {
+                            id: index,
+                            placeholder: $t(placeholder),
+                            'aria-label': $t(placeholder),
+                        },
+                        textInput: inputValue,
+                        hasFocus: focused(),
+                        keyboard: {
+                            13: apply.bind($data, false),
+                            27: cancel
+                        }">
+            <button class="action-submit ai-search-submit" type="button" click="apply.bind($data, false)"
+                    attr="'aria-label': $t('Search'), title: $t('Search')">
+                <span></span>
+            </button>
+        </div>
+    </div>
+</if>

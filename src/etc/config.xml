@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <tonsoflimes_admingridai>
+            <general>
+                <is_enabled>1</is_enabled>
+            </general>
+            <gateway>
+                <type>openai</type>
+                <openai_api_key/>
+                <openrouter_base_uri>https://openrouter.ai/api/v1</openrouter_base_uri>
+                <openrouter_api_key/>
+                <custom_base_uri/>
+                <custom_api_key/>
+            </gateway>
+            <advanced>
+                <max_options_size>300</max_options_size>
+            </advanced>
+        </tonsoflimes_admingridai>
+    </default>
+</config>

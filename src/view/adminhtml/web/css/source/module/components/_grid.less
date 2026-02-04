@@ -1,0 +1,143 @@
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+
+//
+//  AI Search Grid Styles
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+  // Search Action Toggle Button in the top
+  .admin__data-grid-action-columns.admin__tofl_search-by-ai-action {
+    .admin__action-dropdown {
+      &:before {
+        filter: brightness(0);
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: url('TonsOfLimes_AdminGridAI::images/sparkling-100x100.png') center center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      padding: 5px;
+
+
+      .admin__action-dropdown-text {
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    &._active {
+      .admin__action-dropdown {
+        &:before {
+          filter: none;
+        }
+      }
+    }
+  }
+
+  // Search Container
+  .admin__data-grid-ai-search-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+    padding: 10px 0 10px;
+    border: 1px solid #ccc;
+    height: 100px;
+
+    .admin__tofl_ai-query-edit-container {
+      position: relative;
+      width: 50%;
+
+      input {
+        width: 100%;
+        height: 33px;
+        text-align: center;
+
+        &[readonly] {
+          background-color: #f0f0f0;
+          color: #555;
+        }
+      }
+
+      button {
+        filter: brightness(0);
+        position: absolute;
+        height: 33px;
+        background-color: transparent;
+        padding: 1px;
+        border: none;
+
+        &:hover {
+          filter: none;
+          background-color: transparent;
+        }
+
+        &.ai-search-submit {
+          right: 0;
+
+          &:before {
+            content: "";
+            display: inline-block;
+            background: url('TonsOfLimes_AdminGridAI::images/sparkling-100x100.png') center center no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            width: 32px;
+            height: 32px;
+            margin: 0 8px;
+          }
+        }
+
+        &.ai-search-clear {
+          right: 40px;
+
+          &:before {
+            &:extend(.abs-icon all);
+            content: @icon-remove-small__content;
+          }
+        }
+
+        &.ai-search-regenerate {
+          right: 80px;
+        }
+      }
+    }
+  }
+
+  // Adjust margin when filters are shown/hidden
+  .admin__data-grid-filters-current._show ~ .data-grid-search-control-wrap {
+    margin-bottom: 10px;
+  }
+
+  .admin__data-grid-filters-current + .admin__data-grid-filters-wrap._show + .admin__data-grid-ai-search-wrap {
+    margin-top: -9px;
+  }
+
+  .admin__data-grid-filters-current._show + .admin__data-grid-filters-wrap + .admin__data-grid-ai-search-wrap {
+    margin-top: -11px;
+  }
+
+  .admin__data-grid-filters-current._show + .admin__data-grid-filters-wrap._show + .admin__data-grid-ai-search-wrap {
+    margin-top: -9px;
+  }
+
+  .sticky-header {
+    .admin__tofl_search-by-ai-action {
+      display: none;
+    }
+    .admin__data-grid-ai-search-wrap {
+      display: none;
+    }
+  }
+}

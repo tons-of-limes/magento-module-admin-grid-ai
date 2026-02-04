@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="tonsoflimes_admingridai" frontName="tonsoflimesadmingridai">
+            <module name="TonsOfLimes_AdminGridAI"/>
+        </route>
+    </router>
+</config>

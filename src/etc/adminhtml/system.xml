@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tonsoflimes" translate="label" sortOrder="555">
+            <label>tons of limes 🍋‍🟩</label>
+        </tab>
+        <section id="tonsoflimes_admingridai" translate="label" type="text" sortOrder="100" showInDefault="1">
+            <label>Admin Grid AI</label>
+            <tab>tonsoflimes</tab>
+            <resource>TonsOfLimes_AdminGridAI::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="is_enabled" translate="label" type="select" canRestore="1"
+                       sortOrder="10" showInDefault="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="gateway" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>LLM Gateway</label>
+                <field id="type" translate="label" type="select" canRestore="1"
+                       sortOrder="10" showInDefault="1">
+                    <label>Type</label>
+                    <source_model>TonsOfLimes\AdminGridAI\Model\Config\Source\GatewayType</source_model>
+                </field>
+                <field id="openai_api_key" translate="label" type="obscure"
+                       sortOrder="20" showInDefault="1">
+                    <label>OpenAI / API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="type">openai</field>
+                    </depends>
+                </field>
+                <field id="openrouter_base_uri" translate="label" type="text" canRestore="1"
+                       sortOrder="20" showInDefault="1">
+                    <label>OpenRouter / Base URI</label>
+                    <depends>
+                        <field id="type">openrouter</field>
+                    </depends>
+                </field>
+                <field id="openrouter_api_key" translate="label" type="obscure"
+                       sortOrder="30" showInDefault="1">
+                    <label>OpenRouter / API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="type">openrouter</field>
+                    </depends>
+                </field>
+                <field id="custom_base_uri" translate="label" type="text" canRestore="1"
+                       sortOrder="20" showInDefault="1">
+                    <label>Custom Gateway / Base URI</label>
+                    <depends>
+                        <field id="type">custom</field>
+                    </depends>
+                </field>
+                <field id="custom_api_key" translate="label" type="obscure"
+                       sortOrder="30" showInDefault="1">
+                    <label>Custom Gateway / API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="type">custom</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="advanced" translate="label" type="text" sortOrder="20" showInDefault="1">
+                <label>Advanced</label>
+                <field id="max_options_size" translate="label comment" type="text" canRestore="1"
+                       sortOrder="10" showInDefault="1">
+                    <label>Max Options Size</label>
+                    <comment>Limits how many select options are sent in listing structure for LLM.</comment>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © tons of limes <https://github.com/tons-of-limes>. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="TonsOfLimes\AdminGridAI\Model\Prompt\PromptRegistryInterface" type="TonsOfLimes\AdminGridAI\Model\Prompt\PromptRegistry"/>
+
+    <!-- Prompt Registry Configuration -->
+    <type name="TonsOfLimes\AdminGridAI\Model\Prompt\PromptRegistry">
+        <arguments>
+            <argument name="definitions" xsi:type="array">
+                <item name="listing_state_query" xsi:type="array">
+                    <item name="templatePath" xsi:type="string">TonsOfLimes_AdminGridAI::data/prompt/listing_state_query.prompt.md</item>
+                    <item name="variablesDefinitions" xsi:type="array">
+                        <item name="listing_structure" xsi:type="string">listing_structure</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+

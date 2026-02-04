@@ -1,0 +1,21 @@
+{
+    "name": "tonsoflimes/magento-module-admin-grid-ai",
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "require": {
+        "php": "~8.2.0||~8.3.0||~8.4.0",
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-ui": "*",
+        "openai-php/client": "*",
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "TonsOfLimes\\AdminGridAI\\": "src/"
+        }
+    }
+}
