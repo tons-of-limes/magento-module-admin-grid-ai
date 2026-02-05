@@ -1,7 +1,7 @@
 {
     "name": "tonsoflimes/magento-module-admin-grid-ai",
     "type": "magento2-module",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Magento2 module that adds AI capabilities to admin grids (filters, columns, mass actions) using OpenAI's-compatible API.",
     "license": [
         "MIT"
